@@ -55,4 +55,4 @@ let index = 0;
             indice = (indice + 1 ) % titulos.length; // Retorna ao inicio 
             h1.textContent = titulo[indice];
 
-        }, 5000);
+        }, 4000);

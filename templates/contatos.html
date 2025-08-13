@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Formulário de Contato</title>
+<style>
+  body {
+    background-color: #222;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+  .form-container {
+    background-color: #333;
+    padding: 20px 30px;
+    border-radius: 8px;
+    width: 320px;
+    color: white;
+  }
+  .form-container h2 {
+    margin-bottom: 15px;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+  }
+  textarea {
+    resize: vertical;
+    height: 80px;
+  }
+  input[type="submit"] {
+    width: 100%;
+    background-color: #00ff1a;
+    border: none;
+    padding: 10px 0;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: #00cc14;
+  }
+</style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Entre em contato</h2>
+    <form>
+      <input type="text" name="nome" placeholder="Nome completo" required />
+      <input type="text" name="whatsapp" placeholder="Whatsapp" required />
+      <input type="email" name="email" placeholder="Gmail" required />
+      <textarea name="assunto" placeholder="Digite o assunto" required></textarea>
+      <input type="submit" value="Enviar" />
+    </form>
+  </div>
+</body>
+</html>

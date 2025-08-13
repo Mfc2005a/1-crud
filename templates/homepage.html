@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mateus Ferrari Costa - Desenvolvedor Full stack</title>
+<body style="background-color: #333;">
+    
+        <button id="topBtn" style="display:none; position:fixed; bottom:20px; right:20px;"> Topo </button>
+    <style>
+        .fade-in {
+            opacity: 0;
+            transition: opacity 2s ease-in;
+        }
+        .fade-in.visible {
+            opacity: 1;
+        }        
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color:  #f0f0f0;
+        } 
+        h1 {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            font-size: 40px;  
+            color: #f0f0f0; 
+        
+        }
+
+        p {
+            position: absolute;
+            top: 150px;
+            left: 20px;
+            font-size: 40px;
+            color: #f0f0f0;
+    
+        }   
+        
+        .nav-links {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            display: flex;
+            gap: 20px;
+        }    
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #f0f0f0;
+            font-size: 20px;
+            background-color: #333;
+            padding: 20px 20px;
+            border-radius:  5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 0 transparent;
+        }
+
+        .nav-links a:hover {
+            background-color: #555;
+            color: #f0f0f0;
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(red, green, blue, alpha);
+        }
+
+        .stack {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+    
+        .ferramentas {
+            margin: 40px 0;
+            font-size: 18px;
+            color: #f0f0f0;
+            transition: all 0.3s ease;
+        }
+
+        .links {
+            margin: 30px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;            
+        }
+
+        .links a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #444;
+            padding: 12px 20px;
+            border-radius: 5px;
+            transition: color 0.3s ease;
+        }
+
+         
+
+    </style>
+</head>
+
+<body>  
+    <h1>Mateus Ferrari Costa</h1>
+    <p class="stack">Desenvolvedor Full stack | Python • Golang • Javascript</p>
+    <p class="ferramentas">Ferramentas: Flask, HTML, CSS</p>
+    <div class="nav-links">    
+        <a href="{{url_for('contatos')}}">contatos</a>
+        
+    </div>
+
+    <div class="links">
+        <a href="https://acesse.one/pm4Vv" target="_blank">Linkedin</a>
+        <a href="https://github.com/Mfc2005a" target="_blank">github</a>
+    </div>
+
+<script src="{{ url_for('static', filename='template/html/arquivo.js') }}"></script>
+
+ 
+
+</body>
+</html> 
