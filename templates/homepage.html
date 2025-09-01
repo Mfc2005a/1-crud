@@ -4,26 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mateus Ferrari Costa - Desenvolvedor Full stack</title>
+    <title>Mateus Ferrari Costa</title>
+
+    </head>
 <body style="background-color: #333;">
-    
+
+
+
+
+
         <button id="topBtn" style="display:none; position:fixed; bottom:20px; right:20px;"> Topo </button>
     <style>
+     
         .fade-in {
-            opacity: 0;
+            opacity: 100;
             transition: opacity 2s ease-in;
         }
         .fade-in.visible {
             opacity: 1;
         }        
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial, sans-serif; 
             text-align: center;
             color:  #f0f0f0;
         } 
         h1 {
             position: absolute;
-            top: 40px;
+            top: 80px;
             left: 40px;
             font-size: 40px;  
             color: #f0f0f0; 
@@ -32,7 +39,7 @@
 
         p {
             position: absolute;
-            top: 150px;
+            top: 160px;
             left: 20px;
             font-size: 40px;
             color: #f0f0f0;
@@ -51,7 +58,7 @@
             text-decoration: none;
             color: #f0f0f0;
             font-size: 20px;
-            background-color: #333;
+            background-color: #463a3a;
             padding: 20px 20px;
             border-radius:  5px;
             transition: all 0.3s ease;
@@ -59,10 +66,10 @@
         }
 
         .nav-links a:hover {
-            background-color: #555;
+            background-color: #555; 
             color: #f0f0f0;
             transform: scale(1.1);
-            box-shadow: 0 4px 10px rgba(red, green, blue, alpha);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .stack {
@@ -93,27 +100,71 @@
             transition: color 0.3s ease;
         }
 
+        
+        .links a:hover {
+            color: #f0f0f0;
+            background-color: #666;
+            transform: scale(1.3);
+            box-shadow: 0 4px 10px rgba(0, 0,   0, 0.2);
+        }
          
+        
+        .links a:nth-child(1) {
+            position: absolute;
+            top: 30px;
+            left: 400px;
+        }
+        .links a:nth-child(2) {
+            position: absolute;
+            top: 30px;
+            left: 600px;        
+        }
+
+        
+        .profileImage {
+            position: absolute;
+            top: 10px;
+            left: 350px; 
+        }
+        .linkedinImage {
+            position: absolute;
+            top: 10px;
+            left: 550px;        
+        }
 
     </style>
-</head>
+    
+    
 
-<body>  
+
+
+
     <h1>Mateus Ferrari Costa</h1>
-    <p class="stack">Desenvolvedor Full stack | Python • Golang • Javascript</p>
-    <p class="ferramentas">Ferramentas: Flask, HTML, CSS</p>
+    <p class="stack">Desenvolvedor Python</p>
+    <p class="ferramentas">Flask, Django, Numpy, Pytorch, Pandas, scikit-learn </p>
     <div class="nav-links">    
-        <a href="{{url_for('contatos')}}">contatos</a>
+        <a href="{{url_for('contatos')}}">Contato</a>
         
     </div>
+    
+    <img src="{{ url_for('static', filename='imagens/github.png') }}" 
+     alt="Github" 
+     class="fade-in profileImage" 
+     style="width:40px; height:40px; border-radius:20%; margin-top:20px;">
 
+<img src="{{ url_for('static', filename='imagens/Linkedin.png') }}" 
+     alt="Linkedin" 
+     class="fade-in linkedinImage" 
+     style="width:40px; height:40px; border-radius:20%; margin-top:20px;">
+    
     <div class="links">
         <a href="https://acesse.one/pm4Vv" target="_blank">Linkedin</a>
         <a href="https://github.com/Mfc2005a" target="_blank">github</a>
     </div>
 
-<script src="{{ url_for('static', filename='template/html/arquivo.js') }}"></script>
 
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+ 
  
 
 </body>

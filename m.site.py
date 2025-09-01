@@ -37,11 +37,12 @@ def contatos():
         """
         msg = Message(subject="Novo contato :)", recipients=[os.getenv('EMAIL_USER')], body=corpo_email)
         mail.send(msg)
-
-        return redirect(url_for('homepage.html'))
     
-    return render_template("contatos.html")
 
+    
+        return redirect(url_for('homepage.html'))
+
+    return render_template("contatos.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
