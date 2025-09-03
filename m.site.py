@@ -14,6 +14,8 @@ app.config['MAIL_DEFAULT_SENDER'] = ('Portifólio Dev', os.getenv('EMAIL_USER'))
 
 mail = Mail(app)
 
+
+
 # Rotas 
 @app.route("/")
 def homepage():
