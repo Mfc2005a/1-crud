@@ -18,12 +18,18 @@
     background-color: #333;
     padding: 20px 30px;
     border-radius: 8px;
-    width: 320px;
+    width: 350px;
     color: white;
   }
   .form-container h2 {
     margin-bottom: 15px;
+    color: #00ff1a;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
   }
+
   input[type="text"],
   input[type="email"],
   textarea {
@@ -55,7 +61,7 @@
 </head>
 <body>
   <div class="form-container">
-    <h2>Entre em contato</h2>
+    <h2>Entre em contato!</h2>
     <form>
       <input type="text" name="nome" placeholder="Nome completo" required />
       <input type="text" name="whatsapp" placeholder="Whatsapp" required />
@@ -64,14 +70,6 @@
       <input type="submit" value="Enviar" />
     </form>
   </div>
-
-  <div class="form-container"> 
-    <h2>Obrigado!</h2>
-    <form onsubmit="window.location.href='index.html'; return false;">
-      
-    </form>  
-  </div>
-
 
   </div>
 </body>
