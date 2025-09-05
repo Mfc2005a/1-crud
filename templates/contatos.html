@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Formulário de Contato</title>
 <style>
-
-  
   body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -14,11 +12,10 @@
     justify-content: center;
     align-items: center;
     margin: 0;
-
-     background-image: url('{{ url_for("static", filename="imagens/coco.png") }}');
-    background-size: cover;       /* cobre toda a tela */
-    background-position: center;  /* centraliza a imagem */
-    background-repeat: no-repeat; /* não repete a imagem */
+    background-image: url('{{ url_for("static", filename="imagens/coco.png") }}');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
   .form-container {
     background-color: #852d63;
@@ -26,6 +23,7 @@
     border-radius: 8px;
     width: 350px;
     color: white;
+    position: relative;
   }
   .form-container h2 {
     margin-bottom: 15px;
@@ -35,9 +33,6 @@
     font-weight: bold;
     text-transform: uppercase;
   }
-  
-
-
   input[type="text"],
   input[type="email"],
   textarea {
@@ -64,14 +59,30 @@
   }
   input[type="submit"]:hover {
     background-color: #00cc14;
-    transition: all 1s ease;
+    transition: all 0.5s ease;
+  }
+
+  /* Mensagem de confirmação */
+  .msg-sucesso {
+    display: none; /* esconde por padrão */
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: linear-gradient(90de, #852d63, #d67ecb, #4d7eff);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
   }
 </style>
 </head>
 <body>
   <div class="form-container">
+    <div class="msg-sucesso" id="msg-sucesso">Mensagem enviada com sucesso!</div>
     <h2>Entre em contato!</h2>
-    <form>
+    <form id="contatoForm">
       <input type="text" name="nome" placeholder="Nome completo" required />
       <input type="text" name="whatsapp" placeholder="Whatsapp" required />
       <input type="email" name="email" placeholder="Gmail" required />
@@ -80,7 +91,22 @@
     </form>
   </div>
 
-  </div>
+  <script>
+    const form = document.getElementById('contatoForm');
+    const msg = document.getElementById('msg-sucesso');
 
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // evita que a página recarregue
+      // Aqui você pode adicionar o envio via AJAX se quiser salvar no servidor
+
+      msg.style.display = 'block'; // mostra a mensagem
+      form.reset(); // limpa os campos
+
+      // opcional: esconde a mensagem depois de 3 segundos
+      setTimeout(() => {
+        msg.style.display = 'none';
+      }, 3000);
+    });
+  </script>
 </body>
 </html>
