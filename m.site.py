@@ -3,6 +3,7 @@ from flask_mail import Mail, Message
 import os
 
 app = Flask(__name__)
+app.secret_key = '123456'  # Necessário para usar flash messages
 
 #Configurações do Gmail 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
@@ -19,9 +20,9 @@ mail = Mail(app)
 def homepage():
     return render_template("homepage.html")
 
-@app.route("/contatos", methods= ['get', 'post'])
+@app.route("/contatos", methods= ['GET', 'POST'])
 def contatos():
-    if request.method == 'Post':
+    if request.method == 'POST':
         nome = request.form['nome']
         telefone = request.form['telefone']
         gmail = request.form['gmail']
@@ -38,8 +39,7 @@ def contatos():
         msg = Message(subject="Novo contato :)", recipients=[os.getenv('EMAIL_USER')], body=corpo_email)
         mail.send(msg)
     
-
-    
+        flash ('Mensagem enviada com sucesso!')   
         return redirect(url_for('homepage.html'))
 
     return render_template("contatos.html")
