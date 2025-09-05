@@ -3,209 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Mateus Ferrari Costa</title>
 
-    </head>
-<body style="background-color: #333;">
-
-
-
-
-
-        <button id="topBtn" style="display:none; position:fixed; bottom:20px; right:20px;"> Topo </button>
     <style>
-     
+        
+
+        body {
+            background-color: #333;
+            font-family: Arial, sans-serif; 
+            text-align: center;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Botão voltar ao topo */
+        #topBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        /* Animação fade-in */
         .fade-in {
             opacity: 100;
             transition: opacity 2s ease-in;
         }
         .fade-in.visible {
             opacity: 1;
-        }        
-        body {
-            font-family: Arial, sans-serif; 
-            text-align: center;
-            color:  #f0f0f0;
-        } 
-        h1 {
-            position: absolute;
-            top: 80px;
-            left: 40px;
-            font-size: 40px;  
-            color: #f0f0f0; 
-        
         }
 
-        p {
-            position: absolute;
-            top: 160px;
-            left: 20px;
-            font-size: 40px;
-            color: #f0f0f0;
-    
+        .fade-in.profileImage {
+            width: 50px;
+            height: 50px;
+            border-radius: 60px;
+        }
+        .fade-in.linkedinImage {
+            width: 50px;
+            height: 50px;
+            border-radius: 20px;
+            right: 20px;
+            top: auto; 
         }   
 
-        .Sobre_mim {
-            position: absolute;
-            top: 450px;
-            left: 20px;
-            right: 20px;
+        /* Títulos e textos */
+        h1 {
+            margin-top: 80px;
+            font-size: 40px;  
+        }
+        p.stack {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        .Sobre_mim, .sobre_mim_english {
+            max-width: 800px;
+            margin: 40px auto;
             font-size: 20px;
-            color: #f0f0f0;
             text-align: justify;
-            margin: 0 20px;
         }
 
-        .sobre_mim_english {
-            position: absolute;
-            top: 250px;
-            left: 20px;
-            right: 20px;
-            font-size: 20px;
-            color: #f0f0f0;
-            text-align: justify;
-            margin: 0 20px;
-        }
-        
+        /* Navegação */
         .nav-links {
-            position: absolute;
-            top: 20px;
-            right: 40px;
+            margin-top: 20px;
             display: flex;
+            justify-content: flex-end;
             gap: 20px;
-        }    
-        
+            padding: 10px 40px;
+        }
         .nav-links a {
             text-decoration: none;
             color: #f0f0f0;
-            font-size: 20px;
+            font-size: 18px;
             background-color: #444;
-            padding: 20px 20px;
-            border-radius:  5px;
+            padding: 10px 15px;
+            border-radius: 5px;
             transition: all 0.3s ease;
-            box-shadow: 0 0 0 transparent;
         }
-
         .nav-links a:hover {
             background-color: #555; 
-            color: #f0f0f0;
             transform: scale(1.1);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        .stack {
-            margin: 20px 0;
-            font-size: 18px;
-        }
+        /* Links sociais */
+        .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px 0;
+}
 
+.social-links a {
+    display: flex;
+    align-items: center;   /* ícone centralizado com o texto */
+    gap: 10px;             /* espaço entre ícone e texto */
+    text-decoration: none;
+    color: #fff;
+    background-color: #444;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
 
-        .links {
-            margin: 30px 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;            
-        }
+.social-links a:hover {
+    background-color: #666;
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
 
-        .links a {
-            text-decoration: none;
-            color: #fff;
-            background-color: #444;
-            padding: 12px 20px;
-            border-radius: 5px;
-            transition: color 0.3s ease;
-        }
-
-        
-        .links a:hover {
-            color: #f0f0f0;
-            background-color: #666;
-            transform: scale(1.3);
-            box-shadow: 0 4px 10px rgba(0, 0,   0, 0.2);
-            transition: all 0.4s ease;
-        }
-         
-        
-        .links a:nth-child(1) {
-            position: absolute;
-            top: 30px;
-            left: 400px;
-        }
-        .links a:nth-child(2) {
-            position: absolute;
-            top: 30px;
-            left: 600px;        
-        }
-
-        
-        .profileImage {
-            position: absolute;
-            top: 10px;
-            left: 550px; 
-        }
-        .linkedinImage {
-            position: absolute;
-            top: 10px;
-            left: 350px;        
-        }
-
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 28px;
-                top: 20px;
-                left: 20px;
-            }
-            p {
-                font-size: 18px;
-                top: 80px;
-                left: 20px;
-            }
-            .Sobre_mim, .sobre_mim_english {
-                font-size: 16px;
-                top: 150px;
-                left: 10px;
-                right: 10px;
-            }
-            .nav-links {
-                flex-direction: column;
-                top: 10px;
-                right: 10px;
-            }
-            .nav-links a {
-                font-size: 16px;
-                padding: 10px 15px;
-            }
-            .links a {
-                font-size: 14px;
-                padding: 8px 12px;
-            }
-            .links a:nth-child(1) {
-                position: static;
-            }
-            .links a:nth-child(2) {
-                position: static;        
-            }
-            .profileImage, .linkedinImage {
-                position: static;
-                margin-top: 10px;
-            }
-        }
+.social-links img {
+    width: 24px;
+    height: 24px;
+    border-radius: 20%;
+}
 
     </style>
-    
+</head>
+<body>
+
     <h1>Mateus Ferrari Costa</h1>
     <p class="stack">Software Developer</p>
 
-    <p class="Sobre_mim">Sou um pesquisador, pesquiso sobre computação desde criança, mas, decidi 
-        levar isso mais a sério. Desde maio de 2025, venho estudando ferrenhamente em prol de me 
-        tornar um profissional excepcional dentro da área da computação, meus objetivos pessoais 
-        são grandes, e tenho certeza que com minha ambição tenho muito a oferecer em eficiência e esforço. 
-	Por esse motivo, domino Python e suas ferramentas, e através dessa linguagem pesquiso e 
-    trabalho em projetos envolvendo pensamento da maquina (Machine learning) e inteligencia artificial. 
-	Desenvolvi websites para empresas em potencial utilizando flask e django. 
-    Otimizei aplicações e contribui com um código  limpo e entendível. </p>
-
-    <p class="sobre_mim_english">I'm a researcher. I've been researching computing since I was 
+    <p class="sobre_mim_english">
+        I'm a researcher. I've been researching computing since I was 
         a child, but I decided to take it more seriously. Since May 2025, I've been studying 
         tirelessly to become an exceptional professional in the computing field. 
         My personal goals are ambitious, and I'm confident that with my ambition, 
@@ -213,34 +134,45 @@
         I master Python and its tools, and through this language, 
         I research and work on projects involving machine learning and artificial intelligence. 
         I've developed websites for potential companies using Flask and Django. 
-        I've optimized applications and contributed clean, understandable code.</p>
+        I've optimized applications and contributed clean, understandable code.
+    </p>
 
-        
+    <p class="Sobre_mim">
+        Sou um pesquisador, pesquiso sobre computação desde criança, mas, decidi 
+        levar isso mais a sério. Desde maio de 2025, venho estudando ferrenhamente em prol de me 
+        tornar um profissional excepcional dentro da área da computação, meus objetivos pessoais 
+        são grandes, e tenho certeza que com minha ambição tenho muito a oferecer em eficiência e esforço. 
+        Por esse motivo, domino Python e suas ferramentas, e através dessa linguagem pesquiso e 
+        trabalho em projetos envolvendo pensamento da máquina (Machine learning) e inteligência artificial. 
+        Desenvolvi websites para empresas em potencial utilizando Flask e Django. 
+        Otimizei aplicações e contribui com um código limpo e entendível. 
+    </p>
 
-    <div class="nav-links">    <p class="ferramentas"></p>
+    <div class="nav-links">
         <a href="{{url_for('contatos')}}">Contato</a>
-        
-    </div>
-    
-    <img src="{{ url_for('static', filename='imagens/github.png') }}" 
-     alt="Github" 
-     class="fade-in profileImage" 
-     style="width:40px; height:40px; border-radius:20%; margin-top:20px;">
-
-<img src="{{ url_for('static', filename='imagens/Linkedin.png') }}" 
-     alt="Linkedin" 
-     class="fade-in linkedinImage" 
-     style="width:40px; height:40px; border-radius:20%; margin-top:20px;">
-    
-    <div class="links">
-        <a href="https://acesse.one/pm4Vv" target="_blank">Linkedin</a>
-        <a href="https://github.com/Mfc2005a" target="_blank">github</a>
     </div>
 
+    <div class="social-links">
+    <a href="https://acesse.one/pm4Vv" target="_blank">
+        <img src="{{ url_for('static', filename='imagens/Linkedin.png') }}" alt="Linkedin">
+        Linkedin
+    </a>
 
-<script src="{{ url_for('static', filename='script.js') }}"></script>
- 
- 
+    <a href="https://github.com/Mfc2005a" target="_blank">
+        <img src="{{ url_for('static', filename='imagens/github.png') }}" alt="Github">
+        Github
+    </a>
 
+    <a href="https://youtube.com/@mateusferrariti?si=yESWMI2U6YvfQRwL" target="_blank">
+        <img src="{{ url_for('static', filename='imagens/youtube.png') }}" alt="YouTube">
+        YouTube
+    </a>
+    
+</div>
+
+
+    <button id="topBtn">Topo</button>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
-</html> 
+</html>
